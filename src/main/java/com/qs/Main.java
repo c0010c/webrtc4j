@@ -1,20 +1,20 @@
 package com.qs;
 
 
+import com.qs.webrtc.ice.IceAgent;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
+import java.time.LocalTime;
+import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        //InetSocketAddress bindaddr = new InetSocketAddress("192.168.50.117", 8888);
-        DatagramSocket datagramSocket = new DatagramSocket(8888);
-
-        byte[] buf = new byte[1024];
-        DatagramPacket p = new DatagramPacket(buf, 1024);
-        datagramSocket.receive(p);
-        System.out.println(new String(buf, "UTF-8"));
+        IceAgent iceAgent = new IceAgent();
     }
+
 }
